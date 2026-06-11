@@ -1,10 +1,8 @@
-
-
 function letterFinder(word, match) {
     // condition1 and condition2 used to impliment defensive programming, assuming the inputs are wrong and or wrong type and checking it before program execution 
     var condition1 = typeof (word) === 'string' && word.length > 2;
     var condition2 = typeof (match) === 'string' && match.length === 1;
-    if (condition1 == true && condition2 == true) { //condition checkment
+    if (condition1 == true && condition2 == true) { //checks if both condition matches
         for (var i = 0; i < word.length; i++) {
             if (word[i] == match) {
                 // checks if the current character at position i in the word is equal to the match
@@ -14,15 +12,16 @@ function letterFinder(word, match) {
             }
         }
     }else{
+        //if the requirements don't match
         console.log('Please pass correct arguments to the function');
     }
 
 }
 
 
-// for failing test
-letterFinder(1, 2);
+// function involking for failing test
+// letterFinder(1, 2);
 
 
-// function involking
+// function involking for valid call
 letterFinder('cat', 'a');
